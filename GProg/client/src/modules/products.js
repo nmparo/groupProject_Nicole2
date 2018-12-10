@@ -65,12 +65,21 @@ export class Products {
         }
     }
 
+    getProductReviews(product) {
+        this.product = product;
+        this.showProductReview();
+    }
+
+    showProductReview() {
+        this.showProductReview = true;
+    }
+
     back() {
         this.showProductEditForm = false;
     }
 
     logout() {
         this.router.navigate('home');
-      }
+    }
 
 }
