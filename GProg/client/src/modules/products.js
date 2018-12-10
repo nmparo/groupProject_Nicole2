@@ -49,9 +49,10 @@ export class Products {
     }
 
     async save() {
-        if (this.product && this.product.productImage && this.product.productName
-            && this.product.description && this.product.url) {
-            await this.products.saveProduct(this.product);
+        if (this.product && this.product.productName && this.product.description && this.product.url) {
+                let serverResponse = await this.products.saveProduct(this.product);
+                if (this.imagesToUpload && this.imagesToUpload.length > 0) 
+                this.products.uploadImage(this.imagesToUpload, serverResponse.contentID);
             await this.getProducts();
             this.back();
         }
@@ -76,7 +77,21 @@ export class Products {
 
     back() {
         this.showProductEditForm = false;
+        this.imagesToUpload = new Array();
+        this.images = new Array();
     }
+
+    changeImages() {
+        this.imagesToUpload = this.imagesToUpload ? this.imagesToUpload : new Array();
+        for (var i = 0; i < this.images.length; i++) {
+        let addImage = true;
+        this.imagesToUpload.forEach(item => {
+            if (item.name === this.images[i].name) addImage = false;
+        })
+            if (addImage) this.imagesToUpload.push(this.images[i]);
+        }
+        }
+        
 
     logout() {
         this.router.navigate('home');

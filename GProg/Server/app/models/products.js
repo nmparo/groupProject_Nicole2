@@ -3,7 +3,10 @@ var Schema = Mongoose.Schema;
 var Bcrypt = require('bcryptjs');
 
 var productSchema = new Schema({
-    productImage: { type: String, require: true },
+    image: { 
+        imageName: { type: String },
+        originalImageName: { type: String }
+    },
     productName: { type: String, require: true },
     description: { type: String, require: true },
     url: { type: String, require: true }

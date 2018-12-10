@@ -8,22 +8,22 @@ var config = {
         app: { name: 'GProg' },
         port: 5000,
         db: 'mongodb://127.0.0.1/helpMe-dev',
-        secret: "cayennedlikedhistreats"
-
-
+        secret: "cayennedlikedhistreats",
+        uploads: './public/uploadedFiles' 
     },
     test: {
         root: rootPath,
         app: { name: 'GProg' },
         port: 4000,
-        db: 'mongodb://127.0.0.1/helpMe-test'
-    
+        db: 'mongodb://127.0.0.1/helpMe-test',
+        uploads: './public/uploadedFiles' 
     },
     production: {
         root: rootPath,
         app: { name: 'GProg' },
         port: 80,
-        db: 'mongodb://127.0.0.1/helpMe'
+        db: 'mongodb://127.0.0.1/helpMe',
+        uploads: './public/uploadedFiles' 
     }
 };
 

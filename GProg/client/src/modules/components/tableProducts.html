@@ -23,11 +23,11 @@
                         </thead>
                         <tbody>
                             <tr repeat.for="product of products.productsArray">
-                                <td click.trigger="editProduct(product)">${product.productImage}</td>
+                                <td img src="http://localhost:5000/uploadedFiles/products/${product.image.imageName}" target="_blank"></td></td>
                                 <td click.trigger="editProduct(product)">${product.productName}</td>
                                 <td click.trigger="editProduct(product)">${product.description}</td>
                                 <td click.trigger="editProduct(product)">${product.url}</td>     
-                                <td click.trigger="getProductReviews(product)"><i data-feather="star"></i></span></td> 
+                                <td click.trigger="getProductReviews(product)"><i data-feather="star"></i></td> 
                             </tr>
                         </tbody>
                 </table>
