@@ -25,6 +25,18 @@ export class App {
         moduleId: './modules/users',
         name: 'Users',
         auth: true
+      },
+      {
+        route: 'products',
+        moduleId: './modules/products',
+        name: 'Products',
+        auth: true
+      },
+      {
+        route: 'productReviews',
+        moduleId: './modules/productReviews',
+        name: 'Product Reviews',
+        auth: true
       }
     ]);
   }
