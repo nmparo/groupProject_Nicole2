@@ -27,20 +27,30 @@
                                 <label for="url">URL</label>
                                 <input type="text" class="form-control" value.bind="product.url" id="url" placeholder="URL">
                             </div>
-                            <div class="row">
-                                    <label for="productImage">Product Image</label>
-                                <div class="col-2">
+                            <div class="col-1">
+                                    <label for="productImage">Image</label><br />
+                                <div class="col-1">
                                     <label class="btn btn-primary">
                                         Browse for files&hellip; <input type="file" style="display: none;"
-                                            change.delegate="changeFiles()" files.bind="files">
+                                            change.delegate="changeImages()" images.bind="images">
                                     </label>
                                 </div>
                                 <div class="col-10">
                                     <ul>
-                                        <li repeat.for="file of filesToUpload" class="list-group-item">${file.name}<span
-                                                click.delegate="removeFile($index)" class="pull-right"></li>
+                                        <li repeat.for="image of imagesToUpload" class="list-group-item">${image.name}<span
+                                                click.delegate="removeImage($index)" class="pull-right"></li>
                                     </ul>
                                 </div>
+                                <div class="card" repeat.for="product of products.productArray">
+                                    <div class="card-body">
+                                        <div class="row" style="padding:3px;">
+                                <div>
+                                    <a href="http://localhost:5000/uploadedFiles/helpTickets/${product.image.imageName}" 
+                                    target="_blank">${product.image.originalImageName}</a>
+                                </div>
+                                </div>
+                                </div>
+                        
                             </div>
 
                 </form>
